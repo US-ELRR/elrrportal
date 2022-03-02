@@ -5,8 +5,12 @@ import DODImage from '@/public/DOD.png';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import Image from 'next/image';
 import { useState } from 'react';
+import useStore from '@/store/store';
+import { useRouter } from 'next/router';
 
 export default function LoginPage() {
+  const router = useRouter();
+  const { user, setUserCredentials } = useStore((state) => state);
   const [credentials, setCredentials] = useState({
     username: '',
     password: '',
@@ -21,6 +25,14 @@ export default function LoginPage() {
 
   const handleLogin = (e) => {
     e.preventDefault();
+    setUserCredentials({
+      ...user,
+      name: credentials.username,
+      email: credentials.username,
+      password: credentials.password,
+      type: 'manager',
+    });
+    router.push('/manager/career');
   };
 
   return (

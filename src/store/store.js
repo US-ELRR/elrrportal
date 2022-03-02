@@ -7,6 +7,7 @@ const useStore = create((set) => ({
     password: '',
     type: '',
   },
+  setUserCredentials: (user) => set((state) => ({ ...state, user })),
 }));
 
 export default useStore;
