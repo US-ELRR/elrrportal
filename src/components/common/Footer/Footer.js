@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className='max-w-7xl border-t mx-auto px-4 py-2 flex justify-around items-end text-sm'>
+    <footer className='max-w-7xl border-t mx-auto px-4 py-2 mt-8 flex justify-around items-end text-sm'>
       <div id='copy-right' className='text-sm'>
         <p>
           <span>&copy;</span>
@@ -13,7 +13,7 @@ export default function Footer() {
       <div className='grid grid-cols-4 gap-8'>
         <div className='col-span-1'>
           <h3 className='font-semibold py-2 underline underline-offset-1 text-gray-600'>
-            Company
+            About
           </h3>
           <ul className='text-gray-500'>
             <li>
@@ -29,7 +29,7 @@ export default function Footer() {
         </div>
         <div className='col-span-1'>
           <h3 className='font-semibold py-2 underline underline-offset-1 text-gray-600'>
-            Company
+            Resources
           </h3>
           <ul className='text-gray-500'>
             <li>
@@ -45,7 +45,7 @@ export default function Footer() {
         </div>
         <div className='col-span-1'>
           <h3 className='font-semibold py-2 underline underline-offset-1 text-gray-600'>
-            Company
+            Contacts
           </h3>
           <ul className='text-gray-500'>
             <li>
