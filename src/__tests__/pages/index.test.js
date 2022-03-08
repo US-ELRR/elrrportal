@@ -1,6 +1,6 @@
 // tests for the index (login) page
 import { act, render, screen } from '@testing-library/react';
-import LoginPage from '@/pages/login';
+import LoginPage from '@/pages/index';
 
 describe('index page', () => {
   it('should render the login page', () => {

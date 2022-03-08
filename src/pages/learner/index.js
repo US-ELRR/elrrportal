@@ -1,9 +1,12 @@
 import DefaultLayout from '@/components/layouts/DefaultLayout';
+import useStore from '@/store/store';
 
-export default function LearnerDashboardPage() {
+export default function LearnerPage() {
+  const user = useStore((state) => state.user);
   return (
     <DefaultLayout>
-      <h1>Learner Dashboard</h1>
+      Learner Page
+      {JSON.stringify(user)}
     </DefaultLayout>
   );
 }
