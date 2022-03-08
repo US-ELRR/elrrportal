@@ -5,7 +5,7 @@ export default function DefaultLayout({ children }) {
   return (
     <>
       <Header />
-      <main className='max-w-7xl mx-auto'>{children}</main>
+      <main className='max-w-7xl mx-auto mt-10'>{children}</main>
       <Footer />
     </>
   );

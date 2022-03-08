@@ -35,3 +35,4 @@ yarn-error.log*
 .vercel
 .env.development
 .vscode/settings.json
+.vscode/launch.json
