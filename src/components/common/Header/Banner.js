@@ -16,7 +16,7 @@ export function DODImage() {
 
 export default function Banner() {
   return (
-    <div className='inline-flex justify-left items-center gap-2 py-1 w-full'>
+    <div className='inline-flex justify-left items-center gap-2 py-2 w-full'>
       <DODImage />
       <div className='text-white'>
         <h1 className='font-semibold text-xl'>Enterprise Learner Record Repository</h1>

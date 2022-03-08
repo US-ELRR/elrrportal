@@ -4,24 +4,48 @@
 import DODImage from '@/public/DOD.png';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import useStore from '@/store/store';
+import { useRouter } from 'next/router';
+import axios from 'axios';
+import config from '@/configurations/config';
+// import testUser from '@/data/test_user.json';
+import Link from 'next/link';
+import axiosInstance from '@/configurations/axiosInsance';
 
 export default function LoginPage() {
+  const router = useRouter();
+  const { userData, setUserData } = useStore((state) => state);
   const [credentials, setCredentials] = useState({
     username: '',
     password: '',
   });
 
   const handleUpdate = (e) => {
-    setCredentials({
-      ...credentials,
+    setCredentials((previous) => ({
+      ...previous,
       [e.target.name]: e.target.value,
-    });
+    }));
   };
 
   const handleLogin = (e) => {
     e.preventDefault();
+    axios
+      .get('/api/login')
+      .then((res) => {
+        console.log(res.data);
+        setUserData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
+
+  useEffect(() => {
+    if (userData?.user) {
+      router.push('/manager/career/dashboard');
+    }
+  }, [userData]);
 
   return (
     <DefaultLayout>
@@ -31,10 +55,7 @@ export default function LoginPage() {
           Welcome to the Enterprise Learner Record Repository
         </h1>
       </div>
-      <form
-        className='flex justify-center flex-col items-center mt-10 gap-4 my-10'
-        onSubmit={handleLogin}
-      >
+      <form className='flex justify-center flex-col items-center mt-10 gap-4 my-10'>
         <div className='grid gap-2'>
           <input
             onChange={handleUpdate}
@@ -53,7 +74,7 @@ export default function LoginPage() {
         </div>
         <p>Sign-in Using Common Access Card (CAC)</p>
         <button
-          type='submit'
+          onClick={handleLogin}
           className='mt-3 px-6 bg-dod-500 text-white font-bold py-2 rounded hover:bg-dod-300 focus:outline-none  focus:ring-dod-500 focus:shadow-outline-dod focus:ring-2 ring-offset-1'
         >
           Login

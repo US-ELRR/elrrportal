@@ -36,3 +36,4 @@ yarn-error.log*
 .env.development
 .vscode/settings.json
 .vscode/launch.json
+.env
