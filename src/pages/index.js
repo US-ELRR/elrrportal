@@ -27,7 +27,7 @@ export default function LoginPage() {
   const handleLogin = (e) => {
     e.preventDefault();
     axios
-      .get('/api/login')
+      .post('/api/login', { ...credentials })
       .then((res) => {
         console.log(res.data);
         setUserData(res.data);
