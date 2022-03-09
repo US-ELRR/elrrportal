@@ -8,7 +8,7 @@
 
 export default function CompletedCompetencies({ completedCompetencies }) {
   return (
-    <div className='bg-white rounded shadow p-4'>
+    <div className='bg-white rounded shadow p-4 flex-1'>
       <h1 className='text-lg text-center font-semibold pb-2 border-b'>
         Completed Competencies
       </h1>
