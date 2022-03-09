@@ -8,10 +8,6 @@ import { useEffect, useState } from 'react';
 import useStore from '@/store/store';
 import { useRouter } from 'next/router';
 import axios from 'axios';
-import config from '@/configurations/config';
-// import testUser from '@/data/test_user.json';
-import Link from 'next/link';
-import axiosInstance from '@/configurations/axiosInsance';
 
 export default function LoginPage() {
   const router = useRouter();
