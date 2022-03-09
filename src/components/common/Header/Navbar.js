@@ -1,4 +1,5 @@
 import NavBtn from './NavBtn';
+import Link from 'next/link';
 
 const nav_options_career_manager = [
   {

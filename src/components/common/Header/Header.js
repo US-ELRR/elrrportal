@@ -19,7 +19,7 @@ export default function Header() {
     <header className='bg-gradient-to-t from-dod-900 via-dod-500 to-dod-300'>
       <nav className='max-w-7xl mx-auto'>
         <Banner />
-        <NavBar userData={userData} handleLogout={handleLogout} />
+        <NavBar userData={userData} logout={handleLogout} />
       </nav>
     </header>
   );
