@@ -1,4 +1,5 @@
 import NavBtn from './NavBtn';
+import Link from 'next/link';
 
 const nav_options_career_manager = [
   {
@@ -22,6 +23,18 @@ const nav_options_learner = [
   {
     name: 'Dashboard',
     path: '/dashboard', // will need to be reactive based on the user type
+  },
+  {
+    name: 'Personnel',
+    path: '/learner/personnel/personnel', // will need to be reactive based on the user type
+  },
+  {
+    name: 'Courses',
+    path: '/learner/courses', // will need to be reactive based on the user type
+  },
+  {
+    name: 'Compentencies',
+    path: '/learner/compentencies', // will need to be reactive based on the user type
   },
 ];
 
