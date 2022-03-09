@@ -8,7 +8,7 @@ const nav_options_career_manager = [
   },
   {
     name: 'Personnel',
-    path: '/manager/career/personnel', // will need to be reactive based on the user type
+    path: '/dashboard/personnel', // will need to be reactive based on the user type
   },
   {
     name: 'Competencies',
