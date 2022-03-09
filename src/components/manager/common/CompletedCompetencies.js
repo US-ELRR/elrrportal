@@ -18,12 +18,23 @@ export default function CompletedCompetencies({ completedCompetencies }) {
           <div className='w-4/6'>Title</div>
           <div>Conferred Date</div>
         </div>
-        {completedCompetencies?.map((competency) => (
-          <div className='flex items-baseline hover:underline hover:text-dod-100 cursor-pointer even:bg-gray-50'>
-            <div className='w-4/6'>{competency.competencyframeworktitle}</div>
-            <div className=''>{competency.competencyframeworkvalidenddate}</div>
+        {completedCompetencies.length > 0 &&
+          completedCompetencies?.map((competency) => (
+            <div
+              key={competency.competencyframeworktitle}
+              className='flex items-baseline hover:underline hover:text-dod-100 cursor-pointer even:bg-gray-50'
+            >
+              <div className='w-4/6'>{competency.competencyframeworktitle}</div>
+              <div className=''>
+                {competency.competencyframeworkvalidenddate}
+              </div>
+            </div>
+          ))}
+        {completedCompetencies.length === 0 && (
+          <div className='text-center text-gray-500'>
+            No competencies completed
           </div>
-        ))}
+        )}
       </div>
     </div>
   );

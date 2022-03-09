@@ -11,13 +11,20 @@ export default function EnrolledCourses({ courses }) {
           <div className='flex-1'>Course Name</div>
           <div>Start Date</div>
         </div>
-        {courses?.map((course) => (
-          <div className='flex items-baseline hover:underline hover:text-dod-100 cursor-pointer gap-1 even:bg-gray-50'>
-            <div className='w-2/6'>{course.courseidentifier}</div>
-            <div className='flex-1'>{course.name}</div>
-            <div>{course.coursestartdate}</div>
-          </div>
-        ))}
+        {courses.length > 0 &&
+          courses?.map((course) => (
+            <div
+              key={course.name}
+              className='flex items-baseline hover:underline hover:text-dod-100 cursor-pointer gap-1 even:bg-gray-50'
+            >
+              <div className='w-2/6'>{course.courseidentifier}</div>
+              <div className='flex-1'>{course.name}</div>
+              <div>{course.coursestartdate}</div>
+            </div>
+          ))}
+        {courses.length === 0 && (
+          <div className='text-center text-gray-500'>No courses enrolled</div>
+        )}
       </div>
     </div>
   );
