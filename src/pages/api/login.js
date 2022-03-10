@@ -5,5 +5,7 @@ export default function handler(req, res) {
   if(req.body.username.toLowerCase().includes('learner')){
     res.status(200).json(learnerData);
   }
-  res.status(200).json(careerManagerData);
+  else if(req.body.username.toLowerCase().includes('careerManager')){
+    res.status(200).json(careerManagerData);   
+  }
 }

@@ -26,7 +26,7 @@ const nav_options_learner = [
   },
   {
     name: 'Personnel',
-    path: '/learner/personnel/personnel', // will need to be reactive based on the user type
+    path: '/learner/personnel', // will need to be reactive based on the user type
   },
   {
     name: 'Courses',

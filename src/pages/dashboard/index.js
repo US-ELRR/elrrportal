@@ -26,7 +26,7 @@ export default function Dashboard() {
     <DefaultLayout>
       <>
         <Banner user={userData?.user} />
-        <div className='grid grid-cols-3 gap-4 mt-10'>
+        <div className='flex gap-4 mt-10'>
           <EnrolledCourses courses={courseData} />
           <CompletedCompetencies completedCompetencies={competenciesData} />
         </div>
