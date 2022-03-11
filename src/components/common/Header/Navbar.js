@@ -8,15 +8,15 @@ const nav_options_career_manager = [
   },
   {
     name: 'Personnel',
-    path: '/dashboard/personnel', // will need to be reactive based on the user type
+    path: '/dashboard/career_manager/personnel', // will need to be reactive based on the user type
   },
   {
     name: 'Competencies',
-    path: '/manager/career/compentencies',
+    path: '/manager/career_manager/competencies',
   },
   {
     name: 'Search',
-    path: '/manager/career/search', // will need to be reactive based on the user type
+    path: '/dashboard/career_manager/search', // will need to be reactive based on the user type
   },
 ];
 const nav_options_learner = [
