@@ -1,4 +1,12 @@
+import { useRouter } from "next/router";
+
 export default function EnrolledCourses({ courses }) {
+  const router = useRouter();
+
+  const handleNavigate = (course) => {
+    router.push(`/dashboard/courses/${course.courseid}`);
+  };
+
   return (
     <div className='bg-white rounded shadow p-4 flex-1'>
       <h1 className='text-lg text-center font-semibold pb-2 border-b'>
@@ -14,6 +22,7 @@ export default function EnrolledCourses({ courses }) {
         {courses.length > 0 &&
           courses?.map((course) => (
             <div
+              onClick={() => handleNavigate(course)}
               key={course.name}
               className='flex items-baseline hover:underline hover:text-dod-100 cursor-pointer gap-1 even:bg-gray-50'
             >
