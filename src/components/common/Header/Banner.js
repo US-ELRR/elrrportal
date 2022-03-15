@@ -20,7 +20,7 @@ export default function Banner() {
       <DODImage />
       <div className='text-white'>
         <h1 className='font-semibold text-xl'>Enterprise Learner Record Repository</h1>
-        <p>U.S. Department of Defence</p>
+        <p>U.S. Department of Defense</p>
       </div>
     </div>
   );

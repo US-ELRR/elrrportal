@@ -97,7 +97,7 @@ export default function LearnerPersonnelPage() {
     <DefaultLayout>
       <h1 className='mt-2 mx-2 text-2xl font-extrabold'>Personnel Informtion </h1>
       <div>
-        <div className=' px-4 mt-6 mx-auto bg-slate-100'>
+        <div className='flex flex-col px-4 mt-6 mx-auto bg-slate-100'>
           <div className=' '>
             <div className='gap-8 p-8 mx-auto mt-10 bg-white shadow-md rounded-md'>
               <h2 className='mb-6 text-xl font-bold' >Person Details </h2>

@@ -12,7 +12,7 @@ const nav_options_career_manager = [
   },
   {
     name: 'Competencies',
-    path: '/manager/career/compentencies',
+    path: '/manager/career/competencies',
   },
   {
     name: 'Search',
@@ -33,8 +33,8 @@ const nav_options_learner = [
     path: '/learner/courses', // will need to be reactive based on the user type
   },
   {
-    name: 'Compentencies',
-    path: '/learner/compentencies', // will need to be reactive based on the user type
+    name: 'Competencies',
+    path: '/learner/competencies', // will need to be reactive based on the user type
   },
 ];
 
