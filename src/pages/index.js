@@ -38,7 +38,7 @@ export default function LoginPage() {
   };
 
   useEffect(() => {
-    if (userData?.user) {
+    if (userData?.learner) {
       router.push('/dashboard');
     }
   }, [userData]);
