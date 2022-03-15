@@ -12,7 +12,7 @@ const nav_options_career_manager = [
   },
   {
     name: 'Competencies',
-    path: '/manager/career_manager/competencies',
+    path: '/dashboard/career_manager/competencies',
   },
   {
     name: 'Search',
@@ -27,8 +27,9 @@ const nav_options_learner = [
 ];
 
 const nav_options = {
-  CareerManager: nav_options_career_manager,
-  learner: nav_options_learner,
+  CAREER_MANAGER: nav_options_career_manager,
+  TRAINING_MANAGER: [],
+  LEARNER: nav_options_learner,
 };
 
 export default function Navbar({ userData, logout }) {
@@ -47,14 +48,16 @@ export default function Navbar({ userData, logout }) {
   return (
     <header className='flex text-white w-full py-2 items-center justify-between'>
       <div className='flex justify-self-start'>
-        {userData?.type &&
-          nav_options[userData?.type]?.map((option) => {
+        {userData?.role &&
+          nav_options[userData?.role]?.map((option) => {
             return <NavBtn key={option.name} btn={option} />;
           })}
       </div>
       <div className='' onClick={logout}>
-        {userData?.type && <div>{userData?.type}</div>}
-        {userData?.user?.name && <div>{userData?.user.name}</div>}
+        {userData?.role && <div>{userData?.type}</div>}
+        {userData?.learner?.personnel?.person?.name && (
+          <div>{userData?.learner.personnel.person?.name}</div>
+        )}
       </div>
     </header>
   );

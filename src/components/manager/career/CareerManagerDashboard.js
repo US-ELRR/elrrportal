@@ -26,10 +26,10 @@ export default function CareerManagerDashboard() {
 
   return (
     <>
-      <Banner user={userData?.user} />
+      <Banner user={userData?.learner.personnel.person} />
       <div className='flex gap-4 mt-10'>
-        <EnrolledCourses courses={enrolledCourses} />
-        <CompletedCompetencies completedCompetencies={completedCompetencies} />
+        <EnrolledCourses courses={userData?.learner.courses} />
+        <CompletedCompetencies completedCompetencies={userData?.learner.competencies} />
       </div>
     </>
   );
