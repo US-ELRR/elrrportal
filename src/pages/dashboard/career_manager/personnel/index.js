@@ -1,4 +1,6 @@
 import DefaultLayout from '@/components/layouts/DefaultLayout';
+import useAuthRouter from '@/hooks/useAuthRouter';
+import useStore from '@/store/store';
 import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -13,25 +15,16 @@ function modifyLearnerDataStructure(learners) {
   }));
 }
 
-const cols = ['Id', 'Name', 'Email', 'Organization'];
+const cols = ['PersonId', 'Name', 'electronicmailaddress', 'Organization'];
 
 export default function Personnel() {
-  const [personnelData, setPersonnelData] = useState({});
-  const router = useRouter();
+  const router = useAuthRouter();
+  const { userData } = useStore();
 
   // navigate to the users page
   const handleNavigate = (id) => {
     router.push(`/dashboard/career_manager/personnel/${id}`);
   };
-
-  // on mount, fetch the personnel data
-  // will not do this on every render
-  useEffect(() => {
-    axios.get('/api/personnel').then((res) => {
-      // console.table(res.data.learners);
-      setPersonnelData(modifyLearnerDataStructure(res.data.learners));
-    });
-  }, []);
 
   return (
     <DefaultLayout>
@@ -61,38 +54,64 @@ export default function Personnel() {
                     </tr>
                   </thead>
                   <tbody className='bg-white text-left '>
-                    {personnelData.length > 0 &&
-                      personnelData.map((learner) => (
+                    {userData?.assigned.length > 0 &&
+                      userData?.assigned.map((obj) => (
                         <tr
-                          onClick={() => handleNavigate(learner.id)}
-                          key={learner.id}
-                          name={learner.id}
+                          onClick={() =>
+                            handleNavigate(obj.personnel.person.personid)
+                          }
+                          key={obj.personnel.person.personid}
+                          name={obj.personnel.person.personid}
                           className='even:bg-gray-50 cursor-pointer group'
                         >
-                          {cols.map((col) => {
-                            // get the data for the column
-                            const data = learner[col.toLowerCase()];
+                          {obj.personnel.person.personid ? (
+                            <td className='whitespace-nowrap text-sm font-medium text-gray-900 pl-2 py-2 group-hover:text-dod-100'>
+                              {obj.personnel.person.personid}
+                            </td>
+                          ) : (
+                            <td className='whitespace-nowrap text-sm font-medium text-gray-600 pl-2 py-2 group-hover:text-dod-100'>
+                              -
+                            </td>
+                          )}
 
-                            // if there is data for the column
-                            if (data) {
-                              return (
-                                <td className='whitespace-nowrap text-sm font-medium text-gray-900 pl-2 py-2 group-hover:text-dod-100'>
-                                  {data}
-                                </td>
-                              );
-                            }
-                            // if there is no data for the column
-                            return (
-                              <td className='whitespace-nowrap text-sm font-medium text-gray-600 pl-2 py-2 group-hover:text-dod-100'>
-                                -
-                              </td>
-                            );
-                          })}
+                          {obj.personnel.person.name ? (
+                            <td className='whitespace-nowrap text-sm font-medium text-gray-900 pl-2 py-2 group-hover:text-dod-100'>
+                              {obj.personnel.person.name}
+                            </td>
+                          ) : (
+                            <td className='whitespace-nowrap text-sm font-medium text-gray-600 pl-2 py-2 group-hover:text-dod-100'>
+                              -
+                            </td>
+                          )}
+
+                          {obj.personnel.contactInformation
+                            .electronicmailaddress ? (
+                            <td className='whitespace-nowrap text-sm font-medium text-gray-900 pl-2 py-2 group-hover:text-dod-100'>
+                              {
+                                obj.personnel.contactInformation
+                                  .electronicmailaddress
+                              }
+                            </td>
+                          ) : (
+                            <td className='whitespace-nowrap text-sm font-medium text-gray-600 pl-2 py-2 group-hover:text-dod-100'>
+                              -
+                            </td>
+                          )}
+
+                          {obj.personnel.organization.organizationname ? (
+                            <td className='whitespace-nowrap text-sm font-medium text-gray-900 pl-2 py-2 group-hover:text-dod-100'>
+                              {obj.personnel.organization.organizationname}
+                            </td>
+                          ) : (
+                            <td className='whitespace-nowrap text-sm font-medium text-gray-600 pl-2 py-2 group-hover:text-dod-100'>
+                              -
+                            </td>
+                          )}
                         </tr>
                       ))}
                   </tbody>
                 </table>
-                {personnelData.length === 0 && (
+                {userData?.assigned.length === 0 && (
                   <div className='text-center text-gray-600 w-full'>
                     No personnel data found
                   </div>

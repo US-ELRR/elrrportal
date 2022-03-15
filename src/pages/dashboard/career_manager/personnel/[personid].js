@@ -1,4 +1,6 @@
 import DefaultLayout from '@/components/layouts/DefaultLayout';
+import useAuthRouter from '@/hooks/useAuthRouter';
+import useStore from '@/store/store';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -58,7 +60,10 @@ function HistoricalDetailsCard({ obj, title, subtitle, cols }) {
           obj.map((employment, index) => {
             // returns each historical element
             return (
-              <div className='border p-4 rounded-md shadow border-gray-900'>
+              <div
+                className='border p-4 rounded-md shadow border-gray-900'
+                key={index}
+              >
                 <h2 className='text-xl font-semibold'>
                   {subtitle} #{index + 1}
                 </h2>
@@ -88,11 +93,13 @@ function HistoricalDetailsCard({ obj, title, subtitle, cols }) {
 }
 
 export default function PersonPage() {
+  const isAuthenticated = useAuthRouter();
   const {
     query: { personid },
   } = useRouter();
-
   const [data, setData] = useState({});
+  const userData = useStore((state) => state.userData);
+  const router = useRouter();
 
   useEffect(() => {
     // fetch the data
@@ -103,6 +110,10 @@ export default function PersonPage() {
       });
     }
   }, [personid]);
+
+  useEffect(() => {
+    if (!userData) router.push('/');
+  }, [userData]);
 
   return (
     <DefaultLayout>
@@ -127,16 +138,19 @@ export default function PersonPage() {
             cols={3}
           />
           <HistoricalDetailsCard
+            key={'employment'}
             obj={data.employment}
             title={'Employments'}
             subtitle={'Employment'}
           />
           <HistoricalDetailsCard
+            key={'courses'}
             obj={data.courses}
             title={'Courses'}
             subtitle={'Course'}
           />
           <HistoricalDetailsCard
+            key={'competencies'}
             obj={data.competencies}
             title={'Competencies'}
             subtitle={'Competency'}
