@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
-import { Tab } from '@headlessui/react';
+import { Tab, Listbox } from '@headlessui/react';
+import axios from 'axios';
 
 export function Tabs({ tabs }) {
   function classNames(...classes) {
@@ -77,39 +78,62 @@ function SearchLearners() {
   const [query, setQuery] = useState({
     keyword: '',
     date: '',
+    filter: '',
   });
 
   const handleChange = (e) => {
     setQuery({ ...query, [e.target.name]: e.target.value });
   };
 
-  const getData = useCallback(() => {
-    console.log(query);
-  }, [query]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  const getData = useCallback(
+    (e) => {
+      e.preventDefault();
+      axios.get('/api/search', { params: query }).then((res) => {
+        console.dir(res.data);
+      });
+    },
+    [query]
+  );
+
   return (
-    <div className='flex items-center mt-4 gap-2'>
-      <input
-        className='w-1/3 py-2 px-4 text-sm font-bold leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border rounded-md focus:outline-none focus:ring-2 focus:ring-dod-500 focus:ring-offset-1 focus:shadow-md focus:shadow-dod-500'
-        type='text'
-        name='keyword'
-        placeholder='Search Learners'
-        value={query.keyword}
-        onChange={handleChange}
-      />
-      <input
-        className='py-2 px-4 text-sm font-bold leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border rounded-md focus:outline-none focus:ring-2 focus:ring-dod-500 focus:ring-offset-1 focus:shadow-md focus:shadow-dod-500'
-        type='date'
-        name='date'
-        value={query.date}
-        onChange={handleChange}
-      />
-      <button
-        onClick={getData}
-        className='inline-flex items-end px-4 py-2 text-sm font-bold leading-5 text-white transition duration-150 ease-in-out bg-dod-500 border border-gray-300 rounded-md hover:bg-dod-700 focus:outline-none focus:shadow-md focus:shadow-dod-500 focus:ring-dod-500 focus:ring-2 ring-offset-1'
-      >
-        Search
-      </button>
-    </div>
+    <form onSubmit={getData}>
+      <div className='flex items-center mt-4 gap-2'>
+        <input
+          className='w-1/3 py-2 px-4 text-sm font-bold leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border rounded-md focus:outline-none focus:ring-2 focus:ring-dod-500 focus:ring-offset-1 focus:shadow-md focus:shadow-dod-500'
+          type='text'
+          name='keyword'
+          placeholder='Search Course'
+          value={query.keyword}
+          onChange={handleChange}
+        />
+        <input
+          className='py-2 px-4 text-sm font-bold leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border rounded-md focus:outline-none focus:ring-2 focus:ring-dod-500 focus:ring-offset-1 focus:shadow-md focus:shadow-dod-500'
+          type='date'
+          name='date'
+          value={query.date}
+          onChange={handleChange}
+        />
+        <select
+          className='py-2 px-4 text-sm font-bold leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border rounded-md focus:outline-none focus:ring-2 focus:ring-dod-500 focus:ring-offset-1 focus:shadow-md focus:shadow-dod-500'
+          type=''
+          name='filter'
+          value={query.date}
+          onChange={handleChange}
+        >
+          <option value=''>Filter</option>
+        </select>
+        <input
+          type={'submit'}
+          as={'button'}
+          name={'submit'}
+          className='inline-flex items-end px-4 py-2 text-sm font-bold leading-5 text-white transition duration-150 ease-in-out bg-dod-500 border border-gray-300 rounded-md hover:bg-dod-700 focus:outline-none focus:shadow-md focus:shadow-dod-500 focus:ring-dod-500 focus:ring-2 ring-offset-1'
+        />
+      </div>
+    </form>
   );
 }
 
@@ -119,16 +143,16 @@ export default function ManagerSearchPage() {
       <h1 className='text-3xl font-semibold'>Search</h1>
 
       <div className='w-full py-2 text-center flex items-center justify-left gap-2'>
-        <Tabs
+        {/* <Tabs
           tabs={{
-            Learners: {
+            'Search learners by course': {
               content: <SearchLearners />,
             },
-            Competencies: {
+            'Search learners by competency': {
               content: <Competencies />,
             },
           }}
-        />
+        /> */}
       </div>
     </DefaultLayout>
   );
