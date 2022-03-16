@@ -4,7 +4,7 @@ export default function EnrolledCourses({ courses }) {
   const router = useRouter();
 
   const handleNavigate = (course) => {
-    router.push(`/dashboard/courses/${course.courseid}`);
+    router.push(`/dashboard/career_manager/courses/${course.courseid}`);
   };
 
   return (

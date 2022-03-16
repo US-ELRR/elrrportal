@@ -6,7 +6,14 @@
  * } } completedCompetencies
  */
 
+import useAuthRouter from '@/hooks/useAuthRouter';
+
 export default function CompletedCompetencies({ completedCompetencies }) {
+  const router = useAuthRouter();
+  const handleNavigate = (competencyid) => {
+    router.push(`/dashboard/career_manager/competencies/${competencyid}`);
+  };
+
   return (
     <div className='bg-white rounded shadow p-4 flex-1'>
       <h1 className='text-lg text-center font-semibold pb-2 border-b'>
@@ -21,6 +28,7 @@ export default function CompletedCompetencies({ completedCompetencies }) {
         {completedCompetencies.length > 0 &&
           completedCompetencies?.map((competency) => (
             <div
+              onClick={() => handleNavigate(competency.competencyid)}
               key={competency.competencyframeworktitle}
               className='flex items-baseline hover:underline hover:text-dod-100 cursor-pointer even:bg-gray-50'
             >
