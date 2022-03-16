@@ -6,11 +6,11 @@ import DefaultLayout from '@/components/layouts/DefaultLayout';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import useStore from '@/store/store';
-import { useRouter } from 'next/router';
 import axios from 'axios';
+import useAuthRouter from '@/hooks/useAuthRouter';
 
 export default function LoginPage() {
-  const router = useRouter();
+  const router = useAuthRouter();
   const { userData, setUserData } = useStore((state) => state);
   const [credentials, setCredentials] = useState({
     username: '',
@@ -31,6 +31,7 @@ export default function LoginPage() {
       .then((res) => {
         console.log(res.data);
         setUserData(res.data);
+        router.push('/dashboard');
       })
       .catch((err) => {
         console.log(err);
@@ -38,9 +39,7 @@ export default function LoginPage() {
   };
 
   useEffect(() => {
-    if (userData?.learner) {
-      router.push('/dashboard');
-    }
+    if (userData) router.push('/dashboard');
   }, [userData]);
 
   return (
