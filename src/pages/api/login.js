@@ -1,5 +1,12 @@
 import careerManagerData from '@/data/career_manager/careerManagerData.json';
+import trainingManagerData from '@/data/training_manager/trainingManagerData.json';
 
 export default function handler(req, res) {
-  res.status(200).json(careerManagerData);
+  const { username } = req.body;
+  if (username.toLowerCase().includes('careermanager')) {
+    return res.status(200).json(careerManagerData);
+  }
+  if (username.toLowerCase().includes('trainingmanager')) {
+    return res.status(200).json(trainingManagerData);
+  }
 }

@@ -1,5 +1,5 @@
-import careerManagerCourseData from '@/data/career_manager/careerManagerCourseData.json';
+import courseData from '@/data/courseData.json';
 
 export default function handler(req, res) {
-  res.status(200).json(careerManagerCourseData);
+  res.status(200).json(courseData);
 }
