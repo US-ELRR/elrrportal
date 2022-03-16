@@ -1,21 +1,8 @@
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import useAuthRouter from '@/hooks/useAuthRouter';
 import useStore from '@/store/store';
-import axios from 'axios';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useEffect, useCallback, useState, useMemo } from 'react';
 
-function modifyLearnerDataStructure(learners) {
-  return learners?.map((learner) => ({
-    id: learner.personnel.person.personid,
-    name: learner.personnel.person.name,
-    email: learner.personnel.contactInformation.electronicmailaddress,
-    organization: learner.personnel.organization.organizationdescription,
-  }));
-}
-
-const cols = ['PersonId', 'Name', 'electronicmailaddress', 'Organization'];
+const cols = ['PersonId', 'Name', 'Email', 'Organization'];
 
 export default function Personnel() {
   const router = useAuthRouter();
@@ -28,9 +15,9 @@ export default function Personnel() {
 
   return (
     <DefaultLayout>
-      <div className='bg-gray-300 w-full py-2 text-center'>
-        <h1 className='text-3xl font-semibold'>Personnel Page</h1>
-      </div>
+      <h1 className='text-3xl font-semibold bg-gray-300 w-full py-2 text-center'>
+        Personnel Page
+      </h1>
 
       <div className='px-4 sm:px-6 lg:px-8'>
         <div className='mt-8 flex flex-col'>
@@ -54,7 +41,7 @@ export default function Personnel() {
                     </tr>
                   </thead>
                   <tbody className='bg-white text-left '>
-                    {userData?.assigned.length > 0 &&
+                    {userData?.assigned?.length > 0 &&
                       userData?.assigned.map((obj) => (
                         <tr
                           onClick={() =>
@@ -111,7 +98,7 @@ export default function Personnel() {
                       ))}
                   </tbody>
                 </table>
-                {userData?.assigned.length === 0 && (
+                {userData?.assigned?.length === 0 && (
                   <div className='text-center text-gray-600 w-full'>
                     No personnel data found
                   </div>
