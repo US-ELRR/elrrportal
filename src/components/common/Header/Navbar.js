@@ -26,9 +26,28 @@ const nav_options_learner = [
   },
 ];
 
+const training_manager_nav_options = [
+  {
+    name: 'Dashboard',
+    path: '/dashboard',
+  },
+  {
+    name: 'Courses',
+    path: '/dashboard/training_manager/courses',
+  },
+  {
+    name: 'Competencies',
+    path: '/dashboard/training_manager/competencies',
+  },
+  {
+    name: 'Learners',
+    path: '/dashboard/training_manager/learners',
+  },
+];
+
 const nav_options = {
   CAREER_MANAGER: nav_options_career_manager,
-  TRAINING_MANAGER: [],
+  TRAINING_MANAGER: training_manager_nav_options,
   LEARNER: nav_options_learner,
 };
 
