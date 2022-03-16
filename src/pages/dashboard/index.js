@@ -1,8 +1,7 @@
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import useStore from '@/store/store';
 import CareerManagerDashboard from '@/components/manager/career/CareerManagerDashboard';
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import TrainingManagerDashboard from '@/components/manager/training/TrainingManagerDashboard';
 import useAuthRouter from '@/hooks/useAuthRouter';
 
 export default function Dashboard() {
@@ -12,6 +11,7 @@ export default function Dashboard() {
   return (
     <DefaultLayout>
       {userData?.role === 'CAREER_MANAGER' && <CareerManagerDashboard />}
+      {userData?.role === 'TRAINING_MANAGER' && <TrainingManagerDashboard />}
     </DefaultLayout>
   );
 }
