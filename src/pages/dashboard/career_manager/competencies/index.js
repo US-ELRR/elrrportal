@@ -1,34 +1,40 @@
 import DefaultLayout from '@/components/layouts/DefaultLayout';
-import DetailsCard from '@/components/common/DetailsCard';
 import { useEffect, useState } from 'react';
+import Table from '@/components/common/Table';
+import useAuthRouter from '@/hooks/useAuthRouter';
 import axios from 'axios';
 
 export default function CompetenciesPage() {
   const [competencies, setCompetencies] = useState([]);
+  const keys = ['competencyid', 'competencyframeworktitle', 'recordstatus'];
+  const cols = ['Competency ID', 'Competency Title', 'Competency Status'];
+  const router = useAuthRouter();
+
+  const handleClick = (id) => {
+    router.push(`/dashboard/career_manager/competencies/${id}`);
+  };
 
   useEffect(() => {
-    return axios
+    axios
       .get('/api/competencies')
-      .then((res) => {
-        setCompetencies(res.data);
+      .then(({ data }) => {
+        setCompetencies(data);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => console.log(err));
   }, []);
+
   return (
     <DefaultLayout>
-      <h1 className='text-3xl font-semibold bg-gray-300 w-full py-2 text-center'>
+      <h1 className='text-3xl font-semibold text-center bg-gray-300 w-full py-2 '>
         Competencies Page
       </h1>
-      {competencies.map((competency) => (
-        <DetailsCard
-          key={competency.competencyframeworkid}
-          obj={competency}
-          title={competency.competencyframeworktitle}
-          cols={3}
-        />
-      ))}
+      <Table
+        data={competencies}
+        cols={cols}
+        keys={keys}
+        primaryKey={'competencyid'}
+        onClick={handleClick}
+      />
     </DefaultLayout>
   );
 }
