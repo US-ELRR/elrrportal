@@ -73,7 +73,7 @@ export default function Navbar({ userData, logout }) {
           })}
       </div>
       <div className='' onClick={logout}>
-        {userData?.role && <div>{userData?.type}</div>}
+        {userData?.role && <div>{userData?.role}</div>}
         {userData?.learner?.personnel?.person?.name && (
           <div>{userData?.learner.personnel.person?.name}</div>
         )}
