@@ -8,10 +8,6 @@ import { useEffect, useState } from 'react';
 import useStore from '@/store/store';
 import { useRouter } from 'next/router';
 import axios from 'axios';
-import config from '@/configurations/config';
-// import testUser from '@/data/test_user.json';
-import Link from 'next/link';
-import axiosInstance from '@/configurations/axiosInsance';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -31,7 +27,7 @@ export default function LoginPage() {
   const handleLogin = (e) => {
     e.preventDefault();
     axios
-      .get('/api/login')
+      .post('/api/login',{...credentials})
       .then((res) => {
         console.log(res.data);
         setUserData(res.data);
@@ -43,7 +39,7 @@ export default function LoginPage() {
 
   useEffect(() => {
     if (userData?.user) {
-      router.push('/manager/career/dashboard');
+      router.push('/dashboard');
     }
   }, [userData]);
 

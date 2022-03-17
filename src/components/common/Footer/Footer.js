@@ -7,7 +7,7 @@ export default function Footer() {
           <span>2022</span>
           <span>&nbsp;</span>
           <span> - </span>
-          <span>Copy Right. All rights reserved.</span>
+          <span>Copyright &copy; 2022</span>
         </p>
       </div>
       <div className='grid grid-cols-4 gap-8'>
