@@ -1,5 +1,40 @@
+import Table from '@/components/common/Table';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
+import useAuthRouter from '@/hooks/useAuthRouter';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 export default function CompetenciesPage() {
-  return <DefaultLayout>Test</DefaultLayout>;
+  const [competencies, setCompetencies] = useState([]);
+  const keys = ['competencyid', 'competencyframeworktitle', 'recordstatus'];
+  const cols = ['Competency ID', 'Competency Title', 'Competency Status'];
+  const router = useAuthRouter();
+
+  const handleClick = (id) => {
+    router.push(`/dashboard/training_manager/competencies/${id}`);
+  };
+
+  useEffect(() => {
+    axios
+      .get('/api/competencies')
+      .then(({ data }) => {
+        setCompetencies(data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  return (
+    <DefaultLayout>
+      <h1 className='text-3xl font-semibold text-center bg-gray-300 w-full py-2 '>
+        Competencies Page
+      </h1>
+      <Table
+        data={competencies}
+        cols={cols}
+        keys={keys}
+        primaryKey={'competencyid'}
+        onClick={handleClick}
+      />
+    </DefaultLayout>
+  );
 }
