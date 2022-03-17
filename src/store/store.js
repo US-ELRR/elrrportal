@@ -11,7 +11,7 @@ const loadUserDataFromStorage = () => {
   const user = localStorage.getItem('user');
 
   // parse the user data
-  if (!user) return {};
+  if (!user) return null;
   return JSON.parse(user);
 };
 
