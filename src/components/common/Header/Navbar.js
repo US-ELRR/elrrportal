@@ -8,15 +8,15 @@ const nav_options_career_manager = [
   },
   {
     name: 'Personnel',
-    path: '/manager/career/personnel', // will need to be reactive based on the user type
+    path: '/dashboard/career_manager/personnel', // will need to be reactive based on the user type
   },
   {
     name: 'Competencies',
-    path: '/manager/career/competencies',
+    path: '/dashboard/career_manager/competencies',
   },
   {
     name: 'Search',
-    path: '/manager/career/search', // will need to be reactive based on the user type
+    path: '/dashboard/career_manager/search', // will need to be reactive based on the user type
   },
 ];
 const nav_options_learner = [
@@ -24,23 +24,31 @@ const nav_options_learner = [
     name: 'Dashboard',
     path: '/dashboard', // will need to be reactive based on the user type
   },
+];
+
+const training_manager_nav_options = [
   {
-    name: 'Personnel',
-    path: '/learner/personnel', // will need to be reactive based on the user type
+    name: 'Dashboard',
+    path: '/dashboard',
   },
   {
     name: 'Courses',
-    path: '/learner/courses', // will need to be reactive based on the user type
+    path: '/dashboard/training_manager/courses',
   },
   {
     name: 'Competencies',
-    path: '/learner/competencies', // will need to be reactive based on the user type
+    path: '/dashboard/training_manager/competencies',
+  },
+  {
+    name: 'Learners',
+    path: '/dashboard/training_manager/learners',
   },
 ];
 
 const nav_options = {
-  CareerManager: nav_options_career_manager,
-  learner: nav_options_learner,
+  CAREER_MANAGER: nav_options_career_manager,
+  TRAINING_MANAGER: training_manager_nav_options,
+  LEARNER: nav_options_learner,
 };
 
 export default function Navbar({ userData, logout }) {
@@ -59,14 +67,16 @@ export default function Navbar({ userData, logout }) {
   return (
     <header className='flex text-white w-full py-2 items-center justify-between'>
       <div className='flex justify-self-start'>
-        {userData?.type &&
-          nav_options[userData?.type]?.map((option) => {
+        {userData?.role &&
+          nav_options[userData?.role]?.map((option) => {
             return <NavBtn key={option.name} btn={option} />;
           })}
       </div>
       <div className='' onClick={logout}>
-        {userData?.type && <div>{userData?.type}</div>}
-        {userData?.user?.name && <div>{userData?.user.name}</div>}
+        {userData?.role && <div>{userData?.role}</div>}
+        {userData?.learner?.personnel?.person?.name && (
+          <div>{userData?.learner.personnel.person?.name}</div>
+        )}
       </div>
     </header>
   );
