@@ -1,13 +1,12 @@
 export default function Footer() {
   return (
-    <footer className='max-w-7xl border-t mx-auto px-4 py-2 mt-8 flex justify-around items-end text-sm'>
+    <footer className='max-w-7xl border-t mx-auto px-4 py-2 mt-8 flex justify-around items-end text-sm print:hidden'>
       <div id='copy-right' className='text-sm'>
         <p>
-          <span>&copy;</span>
-          <span>2022</span>
-          <span>&nbsp;</span>
-          <span> - </span>
-          <span>Copyright &copy; 2022</span>
+          <span>Copyright &copy; - 2022</span>
+        </p>
+        <p>
+          Disclaimer: The data on this website is for informational purposes
         </p>
       </div>
       <div className='grid grid-cols-4 gap-8'>

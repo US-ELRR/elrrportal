@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 
-export default function EnrolledCourses({ courses }) {
+export default function EnrolledCourses({ courses = [] }) {
   const router = useRouter();
 
   const handleNavigate = (course) => {

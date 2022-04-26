@@ -3,6 +3,7 @@ import useStore from '@/store/store';
 import CareerManagerDashboard from '@/components/manager/career/CareerManagerDashboard';
 import TrainingManagerDashboard from '@/components/manager/training/TrainingManagerDashboard';
 import useAuthRouter from '@/hooks/useAuthRouter';
+import LearnerDashboard from '@/components/learner/LearnerDashboard';
 
 export default function Dashboard() {
   const router = useAuthRouter();
@@ -12,6 +13,7 @@ export default function Dashboard() {
     <DefaultLayout>
       {userData?.role === 'CAREER_MANAGER' && <CareerManagerDashboard />}
       {userData?.role === 'TRAINING_MANAGER' && <TrainingManagerDashboard />}
+      {userData?.role === 'LEARNER' && <LearnerDashboard />}
     </DefaultLayout>
   );
 }

@@ -14,13 +14,13 @@ export default function LoginPage() {
   const { userData, setUserData } = useStore((state) => state);
   const [credentials, setCredentials] = useState({
     username: '',
-    password: '',
+    password: ''
   });
 
   const handleUpdate = (e) => {
     setCredentials((previous) => ({
       ...previous,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     }));
   };
 
@@ -50,7 +50,8 @@ export default function LoginPage() {
           Welcome to the Enterprise Learner Record Repository
         </h1>
       </div>
-      <form className='flex justify-center flex-col items-center mt-10 gap-4 my-10'>
+      <form
+        className='flex justify-center flex-col items-center mt-10 gap-4 my-10'>
         <div className='grid gap-2'>
           <input
             onChange={handleUpdate}

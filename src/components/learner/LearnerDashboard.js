@@ -5,7 +5,6 @@ import EnrolledCourses from '@/components/learner/common/EnrolledCourses';
 import LearnerBanner from './common/LearnerBanner';
 
 export default function LearnerDashboard() {
-  const router = useAuthRouter();
   const userData = useStore((state) => state.userData);
   return (
     <>

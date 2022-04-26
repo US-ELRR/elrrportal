@@ -1,9 +1,5 @@
 /**
  * Shows a list of completed competencies.
- * @param { {
- * competencyframeworkvalidenddate: string,
- * competencyframeworktitle: string,
- * } } completedCompetencies
  */
 
 import useAuthRouter from '@/hooks/useAuthRouter';
@@ -25,7 +21,7 @@ export default function CompletedCompetencies({ completedCompetencies }) {
           <div className='w-4/6'>Title</div>
           <div>Conferred Date</div>
         </div>
-        {completedCompetencies.length > 0 &&
+        {completedCompetencies?.length > 0 &&
           completedCompetencies?.map((competency) => (
             <div
               onClick={() => handleNavigate(competency.competencyid)}
@@ -38,7 +34,7 @@ export default function CompletedCompetencies({ completedCompetencies }) {
               </div>
             </div>
           ))}
-        {completedCompetencies.length === 0 && (
+        {completedCompetencies?.length === 0 && (
           <div className='text-center text-gray-500'>
             No competencies completed
           </div>
