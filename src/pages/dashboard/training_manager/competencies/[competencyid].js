@@ -18,7 +18,7 @@ export default function CompetencyPage() {
       .catch(() => {
         console.log('error');
       });
-  }, []);
+  }, [competencyid]);
 
   return (
     <DefaultLayout>
