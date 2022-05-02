@@ -1,18 +1,18 @@
-import axios from 'axios';
-import { unstable_batchedUpdates } from 'react-dom';
-import { useState, useEffect, useMemo } from 'react';
 import { Chart } from 'react-chartjs-2';
+import { unstable_batchedUpdates } from 'react-dom';
+import { useEffect, useMemo, useState } from 'react';
+import axios from 'axios';
 
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LineElement,
-  PointElement,
-  LinearScale,
   BarElement,
+  CategoryScale,
+  Chart as ChartJS,
+  Legend,
+  LineElement,
+  LinearScale,
+  PointElement,
   Title,
   Tooltip,
-  Legend,
 } from 'chart.js';
 
 ChartJS.register(
@@ -104,6 +104,7 @@ export default function EmploymentCourseScatterPlot({ userId }) {
               item.courses.filter((course) => course.status === 'REGISTERED')
                 .length
           ),
+
           // purple hex
           backgroundColor: '#ffb60050',
           borderColor: '#ffb600',

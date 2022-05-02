@@ -1,6 +1,6 @@
+import { Listbox, Tab } from '@headlessui/react';
 import { useCallback, useEffect, useState } from 'react';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
-import { Tab, Listbox } from '@headlessui/react';
 import axios from 'axios';
 
 export function Tabs({ tabs }) {

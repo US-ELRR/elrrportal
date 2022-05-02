@@ -1,8 +1,8 @@
-import Banner from '@/components/manager/common/Banner';
-import useStore from '@/store/store';
-import EnrolledCourses from '../common/EnrolledCourses';
-import CompletedCompetencies from '../common/CompletedCompetencies';
 import AssignedLearners from './AssignedLearners';
+import Banner from '@/components/manager/common/Banner';
+import CompletedCompetencies from '../common/CompletedCompetencies';
+import EnrolledCourses from '../common/EnrolledCourses';
+import useStore from '@/store/store';
 
 export default function TrainingManagerDashboard() {
   const userData = useStore((state) => state.userData);

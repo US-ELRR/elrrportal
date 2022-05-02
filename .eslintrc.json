@@ -7,6 +7,7 @@
     // "jsx-a11y"
   ],
   "rules": {
+    "react/jsx-key": "off",
     "sort-imports-es6-autofix/sort-imports-es6": [
       2,
       {

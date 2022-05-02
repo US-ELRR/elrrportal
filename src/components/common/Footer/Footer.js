@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className='max-w-7xl border-t mx-auto px-4 py-2 mt-8 flex justify-around items-end text-sm print:hidden'>
+    <footer className='max-w-7xl border-t mx-auto px-4 py-2 mt-8 flex justify-between items-end text-sm print:hidden'>
       <div id='copy-right' className='text-sm'>
         <p>
           <span>Copyright &copy; - 2022</span>
@@ -16,61 +16,33 @@ export default function Footer() {
           </h3>
           <ul className='text-gray-500'>
             <li>
-              <a href='#'>link one</a>
+              <a href='#'>DOD Home Page</a>
             </li>
             <li>
-              <a href='#'>link two</a>
-            </li>
-            <li>
-              <a href='#'>link three</a>
+              <a href='#'>About ADL</a>
             </li>
           </ul>
         </div>
         <div className='col-span-1'>
           <h3 className='font-semibold py-2 underline underline-offset-1 text-gray-600'>
-            Resources
+            Policy
           </h3>
           <ul className='text-gray-500'>
             <li>
-              <a href='#'>link one</a>
+              <a href='#'>Web Policy</a>
             </li>
             <li>
-              <a href='#'>link two</a>
-            </li>
-            <li>
-              <a href='#'>link three</a>
+              <a href='#'>Privacy</a>
             </li>
           </ul>
         </div>
         <div className='col-span-1'>
           <h3 className='font-semibold py-2 underline underline-offset-1 text-gray-600'>
-            Contacts
+            Contact
           </h3>
           <ul className='text-gray-500'>
             <li>
-              <a href='#'>link one</a>
-            </li>
-            <li>
-              <a href='#'>link two</a>
-            </li>
-            <li>
-              <a href='#'>link three</a>
-            </li>
-          </ul>
-        </div>
-        <div className='col-span-1'>
-          <h3 className='font-semibold py-2 underline underline-offset-1 text-gray-600'>
-            Web Policy
-          </h3>
-          <ul className='text-gray-500'>
-            <li>
-              <a href='#'>link one</a>
-            </li>
-            <li>
-              <a href='#'>link two</a>
-            </li>
-            <li>
-              <a href='#'>link three</a>
+              <a href='#'>Contact Us</a>
             </li>
           </ul>
         </div>

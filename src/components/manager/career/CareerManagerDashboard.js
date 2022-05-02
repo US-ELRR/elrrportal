@@ -1,10 +1,10 @@
-import Banner from '@/components/manager/common/Banner';
-import EnrolledCourses from '@/components/manager/common/EnrolledCourses';
-import CompletedCompetencies from '@/components/manager/common/CompletedCompetencies';
-import useStore from '@/store/store';
 import { useEffect, useMemo, useState } from 'react';
-import EmploymentCourseScatterPlot from './EmploymentCourseScatterPlot';
+import Banner from '@/components/manager/common/Banner';
 import CompetenciesPieChart from './CompetenciesRadarChart';
+import CompletedCompetencies from '@/components/manager/common/CompletedCompetencies';
+import EmploymentCourseScatterPlot from './EmploymentCourseScatterPlot';
+import EnrolledCourses from '@/components/manager/common/EnrolledCourses';
+import useStore from '@/store/store';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');

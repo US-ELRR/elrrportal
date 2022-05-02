@@ -1,13 +1,13 @@
 // intial login page for the app
 // all users must come here first before they can access the app
 
+import { useEffect, useState } from 'react';
 import DODImage from '@/public/DOD.png';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import useStore from '@/store/store';
 import axios from 'axios';
 import useAuthRouter from '@/hooks/useAuthRouter';
+import useStore from '@/store/store';
 
 export default function LoginPage() {
   const router = useAuthRouter();

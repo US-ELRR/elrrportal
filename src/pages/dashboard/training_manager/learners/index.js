@@ -1,10 +1,10 @@
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useRouter } from 'next/router';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
+import Link from 'next/link';
+import axios from 'axios';
 import useAuthRouter from '@/hooks/useAuthRouter';
 import useStore from '@/store/store';
-import axios from 'axios';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useEffect, useCallback, useState, useMemo } from 'react';
 
 function modifyLearnerDataStructure(learners) {
   return learners?.map((learner) => ({

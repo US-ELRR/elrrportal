@@ -1,5 +1,5 @@
-import NavBtn from './NavBtn';
 import Link from 'next/link';
+import NavBtn from './NavBtn';
 
 const nav_options_career_manager = [
   {
@@ -14,10 +14,11 @@ const nav_options_career_manager = [
     name: 'Competencies',
     path: '/dashboard/career_manager/competencies',
   },
-  {
-    name: 'Search',
-    path: '/dashboard/career_manager/search', // will need to be reactive based on the user type
-  },
+
+  // {
+  //   name: 'Search',
+  //   path: '/dashboard/career_manager/search', // will need to be reactive based on the user type
+  // },
 ];
 const nav_options_learner = [
   {

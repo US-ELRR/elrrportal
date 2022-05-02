@@ -1,20 +1,20 @@
-import axios from 'axios';
-import { useEffect, useMemo, useState } from 'react';
 import { PolarArea } from 'react-chartjs-2';
 import { unstable_batchedUpdates } from 'react-dom';
+import { useEffect, useMemo, useState } from 'react';
+import axios from 'axios';
 
 import {
-  Chart as ChartJS,
   ArcElement,
-  CategoryScale,
-  RadialLinearScale,
-  LineElement,
-  PointElement,
-  LinearScale,
   BarElement,
+  CategoryScale,
+  Chart as ChartJS,
+  Legend,
+  LineElement,
+  LinearScale,
+  PointElement,
+  RadialLinearScale,
   Title,
   Tooltip,
-  Legend,
 } from 'chart.js';
 
 ChartJS.register(

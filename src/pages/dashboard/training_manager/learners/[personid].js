@@ -1,11 +1,11 @@
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
+import DetailsCard from '@/components/common/DetailsCard';
+import HistoricalDetailsCard from '@/components/common/HistoricalDetailsCard';
+import axios from 'axios';
 import useAuthRouter from '@/hooks/useAuthRouter';
 import useStore from '@/store/store';
-import axios from 'axios';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import HistoricalDetailsCard from '@/components/common/HistoricalDetailsCard';
-import DetailsCard from '@/components/common/DetailsCard';
 
 export default function PersonPage() {
   const isAuthenticated = useAuthRouter();

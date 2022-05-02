@@ -1,8 +1,8 @@
+import { useEffect, useState } from 'react';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
-import useAuthRouter from '@/hooks/useAuthRouter';
 import DetailsCard from '@/components/common/DetailsCard';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import useAuthRouter from '@/hooks/useAuthRouter';
 
 export default function CompetencyPage() {
   const [competency, setCompetency] = useState({});

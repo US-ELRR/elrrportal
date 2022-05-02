@@ -1,6 +1,6 @@
-import Banner from './Banner';
-import NavBar from '@/components/common/Header/NavBar';
 import { useRouter } from 'next/router';
+import Banner from '@/components/common/Header/Banner';
+import NavBar from '@/components/common/Header/Navbar';
 import useStore from '@/store/store';
 
 export default function Header() {
