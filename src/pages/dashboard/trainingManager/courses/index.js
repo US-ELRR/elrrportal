@@ -18,7 +18,7 @@ export default function CoursesPage() {
 
   const [courses, setCourses] = useState([]);
   const handleClick = (id) => {
-    router.push(`/dashboard/training_manager/courses/${id}`);
+    router.push(`/dashboard/trainingManager/courses/${id}`);
   };
   useEffect(() => {
     axios

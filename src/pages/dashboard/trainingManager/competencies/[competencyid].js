@@ -23,7 +23,7 @@ export default function CompetencyPage() {
   return (
     <DefaultLayout>
       <h1 className='text-3xl font-semibold bg-gray-300 w-full py-2 text-center'>
-        {competency.competencyframeworktitle}
+        {competency?.competencyframeworktitle}
       </h1>
       <DetailsCard obj={competency} title='Competency' cols={3} />
     </DefaultLayout>

@@ -4,6 +4,7 @@ import CompetenciesPieChart from './CompetenciesRadarChart';
 import CompletedCompetencies from '@/components/manager/common/CompletedCompetencies';
 import EmploymentCourseScatterPlot from './EmploymentCourseScatterPlot';
 import EnrolledCourses from '@/components/manager/common/EnrolledCourses';
+import useAuthRouter from '@/hooks/useAuthRouter';
 import useStore from '@/store/store';
 
 function classNames(...classes) {
@@ -11,8 +12,13 @@ function classNames(...classes) {
 }
 
 export default function CareerManagerDashboard() {
+  const router = useAuthRouter();
+
   const userData = useStore((state) => state.userData);
   const [assignedLearner, setAssignedLearner] = useState({});
+  const handleNavigate = (course) => {
+    router.push(`/dashboard/careerManager/courses/${course.courseid}`);
+  };
 
   useEffect(() => {
     // try to show the first user in the assigned learner list
@@ -73,6 +79,7 @@ export default function CareerManagerDashboard() {
           courses={assignedLearner?.courses?.sort(
             (a, b) => new Date(b.coursestartdate) - new Date(a.coursestartdate)
           )}
+          handleNavigate={handleNavigate}
         />
 
         <CompletedCompetencies

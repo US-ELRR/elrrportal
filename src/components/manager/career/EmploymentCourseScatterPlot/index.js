@@ -1,4 +1,4 @@
-import { Chart } from 'react-chartjs-2';
+import { Bar, Chart } from 'react-chartjs-2';
 import { unstable_batchedUpdates } from 'react-dom';
 import { useEffect, useMemo, useState } from 'react';
 import axios from 'axios';
@@ -33,11 +33,7 @@ export default function EmploymentCourseScatterPlot({ userId }) {
   const [error, setError] = useState(null);
   const options = {
     indexAxis: 'x', // x or y
-    elements: {
-      bar: {
-        borderWidth: 2,
-      },
-    },
+    elements: {},
     responsive: true,
     plugins: {
       legend: {
@@ -86,7 +82,6 @@ export default function EmploymentCourseScatterPlot({ userId }) {
       datasets: [
         {
           label: 'Completed',
-          type: 'bar',
           data: data.history.map(
             (item) =>
               item.courses.filter((course) => course.status === 'COMPLETED')
@@ -98,7 +93,6 @@ export default function EmploymentCourseScatterPlot({ userId }) {
         },
         {
           label: 'Registered',
-          type: 'bar',
           data: data.history.map(
             (item) =>
               item.courses.filter((course) => course.status === 'REGISTERED')
@@ -112,7 +106,6 @@ export default function EmploymentCourseScatterPlot({ userId }) {
         },
         {
           label: 'Abandoned',
-          type: 'bar',
           data: data.history.map(
             (item) =>
               item.courses.filter((course) => course.status === 'ABANDONED')
@@ -150,7 +143,7 @@ export default function EmploymentCourseScatterPlot({ userId }) {
   console.log('chartData', chartData);
 
   return chartData ? (
-    <Chart data={chartData} options={options} />
+    <Bar data={chartData} options={options} />
   ) : (
     <div className='text-center mt-10 h-[17.18rem] rounded shadow text-gray-900 font-semibold font-mono flex justify-center items-center bg-white '>
       {error && 'Error retrieving data'}

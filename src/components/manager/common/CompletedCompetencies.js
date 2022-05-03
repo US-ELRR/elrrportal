@@ -7,7 +7,7 @@ import useAuthRouter from '@/hooks/useAuthRouter';
 export default function CompletedCompetencies({ completedCompetencies }) {
   const router = useAuthRouter();
   const handleNavigate = (competencyid) => {
-    router.push(`/dashboard/career_manager/competencies/${competencyid}`);
+    router.push(`/dashboard/careerManager/competencies/${competencyid}`);
   };
 
   return (

@@ -11,7 +11,7 @@ export default function CompetenciesPage() {
   const router = useAuthRouter();
 
   const handleClick = (id) => {
-    router.push(`/dashboard/career_manager/competencies/${id}`);
+    router.push(`/dashboard/trainingManager/competencies/${id}`);
   };
 
   useEffect(() => {

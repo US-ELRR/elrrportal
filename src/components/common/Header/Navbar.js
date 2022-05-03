@@ -8,16 +8,16 @@ const nav_options_career_manager = [
   },
   {
     name: 'Personnel',
-    path: '/dashboard/career_manager/personnel', // will need to be reactive based on the user type
+    path: '/dashboard/careerManager/personnel', // will need to be reactive based on the user type
   },
   {
     name: 'Competencies',
-    path: '/dashboard/career_manager/competencies',
+    path: '/dashboard/careerManager/competencies',
   },
 
   // {
   //   name: 'Search',
-  //   path: '/dashboard/career_manager/search', // will need to be reactive based on the user type
+  //   path: '/dashboard/careerManager/search', // will need to be reactive based on the user type
   // },
 ];
 const nav_options_learner = [
@@ -34,15 +34,15 @@ const training_manager_nav_options = [
   },
   {
     name: 'Courses',
-    path: '/dashboard/training_manager/courses',
+    path: '/dashboard/trainingManager/courses',
   },
   {
     name: 'Competencies',
-    path: '/dashboard/training_manager/competencies',
+    path: '/dashboard/trainingManager/competencies',
   },
   {
     name: 'Learners',
-    path: '/dashboard/training_manager/learners',
+    path: '/dashboard/trainingManager/learners',
   },
 ];
 

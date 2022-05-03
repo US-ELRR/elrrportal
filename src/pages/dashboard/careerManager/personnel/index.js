@@ -10,7 +10,7 @@ export default function Personnel() {
 
   // navigate to the users page
   const handleNavigate = (id) => {
-    router.push(`/dashboard/career_manager/personnel/${id}`);
+    router.push(`/dashboard/careerManager/personnel/${id}`);
   };
 
   return (
