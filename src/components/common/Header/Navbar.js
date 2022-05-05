@@ -25,6 +25,10 @@ const nav_options_learner = [
     name: 'Dashboard',
     path: '/dashboard', // will need to be reactive based on the user type
   },
+  {
+    name: 'Transcript',
+    path: '/dashboard/learner/profile', // will need to be reactive based on the user type
+  },
 ];
 
 const training_manager_nav_options = [

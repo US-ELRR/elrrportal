@@ -5,15 +5,15 @@ export default function HistoricalDetailsCard({
   cols,
 }) {
   return (
-    <div className='rounded shadow p-4 bg-gray-50 my-4 gap-4'>
-      <h1 className='text-xl pb-4 border-b font-bold'>{title}</h1>
+    <div className='rounded shadow p-4 bg-gray-50 my-4 gap-4 print:shadow-none print:border-none'>
+      <h1 className='text-xl pb-4 border-b font-bold '>{title}</h1>
       <div className='grid gap-4'>
         {objArr &&
           objArr.map((employment, index) => {
             // returns each historical element
             return (
               <div
-                className='border p-4 rounded-md shadow border-gray-900'
+                className='border p-4 rounded-md shadow border-gray-900 print:border-transparent print:shadow-none'
                 key={index}
               >
                 <h2 className='text-xl font-semibold'>

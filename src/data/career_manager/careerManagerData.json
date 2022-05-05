@@ -535,7 +535,7 @@
             "recordstatus": "ACTIVE"
           },
           {
-            "employmentid": 100,
+            "employmentid": 111,
             "employerName": "NAVY",
             "employerdepartment": "",
             "hiredate": "06/30/2012",
@@ -549,7 +549,7 @@
             "recordstatus": "ACTIVE"
           },
           {
-            "employmentid": 100,
+            "employmentid": 121,
             "employerName": "NAVY",
             "employerdepartment": "",
             "hiredate": "06/30/2012",

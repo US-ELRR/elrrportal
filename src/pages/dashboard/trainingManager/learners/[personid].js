@@ -106,9 +106,11 @@ export default function PersonPage() {
           />
           <HistoricalDetailsCard
             key={'competencies'}
+            cols={4}
             objArr={data.competencies?.map((competency) => ({
               // ...competency,
               Id: competency.competencyid,
+              'Competency Owner': 'Defense Acquisition University',
               'Framework Name': competency.competencyframeworktitle,
               'Framework Version': 'v1.0.3',
             }))}
