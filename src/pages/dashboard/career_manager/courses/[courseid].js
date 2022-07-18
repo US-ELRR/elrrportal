@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-import { useEffect, useState } from 'react';
-import DefaultLayout from '@/components/layouts/DefaultLayout';
-import DetailsCard from '@/components/common/DetailsCard';
-import axios from 'axios';
-import useAuthRouter from '@/hooks/useAuthRouter';
-=======
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import useAuthRouter from '@/hooks/useAuthRouter';
 import axios from 'axios';
 import DetailsCard from '@/components/common/DetailsCard';
 import { useEffect, useState } from 'react';
->>>>>>> main
 
 export default function CoursePage() {
   const router = useAuthRouter();
@@ -29,14 +21,13 @@ export default function CoursePage() {
         })
         .catch((err) => console.log(err));
     }
-  }, [courseid]);
+  }, []);
 
   return (
     <DefaultLayout>
-      <h1 className='text-3xl font-semibold bg-gray-300 w-full py-2 text-center'>
-        {course.name}
-      </h1>
-
+      <div className='bg-gray-300 w-full py-2 text-center'>
+        <h1 className='text-3xl font-semibold'>{course.name}</h1>
+      </div>
       <DetailsCard obj={course} title='Course Details' cols={3} />
     </DefaultLayout>
   );

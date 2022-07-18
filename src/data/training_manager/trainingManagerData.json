@@ -352,7 +352,11 @@
           "telephonenumber": "1-935-456-4578",
           "isprimaryindicator": "Y",
           "telephonetype": "Private",
+<<<<<<< HEAD
           "electronicmailaddress": "BBlanchard@gmail.com",
+=======
+          "electronicmailaddress": "Alexandrina@gmail.com",
+>>>>>>> main
           "electronicmailaddresstype": "Personal",
           "emergencycontact": "Email",
           "recordstatus": "ACTIVE"

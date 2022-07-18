@@ -63,6 +63,7 @@
     "recordstatus": "ACTIVE"
   },
   {
+<<<<<<< HEAD
     "courseid": 104,
     "name": "Shaping Smart Business Arrangements",
     "coursesubjectmatter": null,
@@ -85,6 +86,8 @@
     "recordstatus": "ACTIVE"
   },
   {
+=======
+>>>>>>> main
     "courseid": 109,
     "name": "Department of Defense (DoD) Cyber Awareness Challenge 2021 (1 hr) ",
     "coursesubjectmatter": null,

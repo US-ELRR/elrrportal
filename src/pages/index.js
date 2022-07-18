@@ -5,9 +5,16 @@ import { useEffect, useState } from 'react';
 import DODImage from '@/public/DOD.png';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import Image from 'next/image';
+<<<<<<< HEAD
 import axios from 'axios';
 import useAuthRouter from '@/hooks/useAuthRouter';
 import useStore from '@/store/store';
+=======
+import { useEffect, useState } from 'react';
+import useStore from '@/store/store';
+import axios from 'axios';
+import useAuthRouter from '@/hooks/useAuthRouter';
+>>>>>>> main
 
 export default function LoginPage() {
   const router = useAuthRouter();

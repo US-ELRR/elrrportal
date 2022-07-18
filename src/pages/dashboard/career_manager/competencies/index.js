@@ -1,22 +1,27 @@
-<<<<<<< HEAD
 import DefaultLayout from '@/components/layouts/DefaultLayout';
+import { useEffect, useState } from 'react';
 import Table from '@/components/common/Table';
-=======
-import Table from '@/components/common/Table';
-import DefaultLayout from '@/components/layouts/DefaultLayout';
->>>>>>> main
 import useAuthRouter from '@/hooks/useAuthRouter';
-import useStore from '@/store/store';
+import axios from 'axios';
 
 export default function CompetenciesPage() {
-  const userData = useStore((state) => state.userData);
+  const [competencies, setCompetencies] = useState([]);
   const keys = ['competencyid', 'competencyframeworktitle', 'recordstatus'];
   const cols = ['Competency ID', 'Competency Title', 'Competency Status'];
   const router = useAuthRouter();
 
   const handleClick = (id) => {
-    router.push(`/dashboard/learner/competencies/${id}`);
+    router.push(`/dashboard/career_manager/competencies/${id}`);
   };
+
+  useEffect(() => {
+    axios
+      .get('/api/competencies')
+      .then(({ data }) => {
+        setCompetencies(data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <DefaultLayout>
@@ -24,7 +29,7 @@ export default function CompetenciesPage() {
         Competencies Page
       </h1>
       <Table
-        data={userData?.learner?.competencies}
+        data={competencies}
         cols={cols}
         keys={keys}
         primaryKey={'competencyid'}

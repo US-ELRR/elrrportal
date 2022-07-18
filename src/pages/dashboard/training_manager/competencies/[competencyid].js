@@ -1,35 +1,24 @@
-<<<<<<< HEAD
-import { useEffect, useState } from 'react';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import DetailsCard from '@/components/common/DetailsCard';
-import axios from 'axios';
 import useAuthRouter from '@/hooks/useAuthRouter';
-=======
-import DefaultLayout from '@/components/layouts/DefaultLayout';
-import useAuthRouter from '@/hooks/useAuthRouter';
-import DetailsCard from '@/components/common/DetailsCard';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
->>>>>>> main
 
 export default function CompetencyPage() {
-  const [competency, setCompetency] = useState({});
+  const [competency, setCompetency] = useState(null);
   const {
     query: { competencyid },
   } = useAuthRouter();
-
-  // fetch the data
   useEffect(() => {
-    if (!competencyid) return;
     axios
       .get(`/api/competencies/${competencyid}`)
-      .then((response) => {
-        setCompetency(response.data);
+      .then(({ data }) => {
+        setCompetency(data);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
+        console.log('error');
       });
-  }, [competencyid]);
+  }, []);
 
   return (
     <DefaultLayout>

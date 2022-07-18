@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
@@ -8,6 +9,20 @@ import useAuthRouter from '@/hooks/useAuthRouter';
 import useStore from '@/store/store';
 
 export default function PersonPage() {
+=======
+import DefaultLayout from '@/components/layouts/DefaultLayout';
+import useAuthRouter from '@/hooks/useAuthRouter';
+import useStore from '@/store/store';
+import axios from 'axios';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import DetailsCard from '@/components/common/DetailsCard';
+import HistoricalDetailsCard from '@/components/common/HistoricalDetailsCard';
+
+export default function PersonPage() {
+
+
+>>>>>>> main
   // user data from the store
   const userData = useStore((state) => state.userData);
 
@@ -23,6 +38,7 @@ export default function PersonPage() {
       </div>
       <div className='grid grid-cols-3 gap-4'>
         <div className='col-span-2'>
+<<<<<<< HEAD
           <DetailsCard
             obj={{
               // ...data?.person,
@@ -53,6 +69,12 @@ export default function PersonPage() {
               userData?.learner?.personnel?.contactInformation
                 ?.electronicmailaddress,
           }}
+=======
+          <DetailsCard obj={userData?.learner?.personnel?.person} title='Personnel Data' cols={2} />
+        </div>
+        <DetailsCard
+          obj={userData?.learner?.personnel?.contactInformation}
+>>>>>>> main
           title='Contact Information'
           cols={2}
         />
@@ -62,6 +84,7 @@ export default function PersonPage() {
             title='Organization Data'
             cols={3}
           />
+<<<<<<< HEAD
 
           <HistoricalDetailsCard
             key={'courses'}
@@ -78,11 +101,17 @@ export default function PersonPage() {
               'End Date': course.courseenddate,
               'Enrollment Date': course.courseenrollmentdate,
             }))}
+=======
+          <HistoricalDetailsCard
+            key={'courses'}
+            objArr={userData?.learner?.courses}
+>>>>>>> main
             title={'Courses'}
             subtitle={'Course'}
           />
           <HistoricalDetailsCard
             key={'competencies'}
+<<<<<<< HEAD
             cols={4}
             objArr={userData?.learner?.competencies.map((competency) => ({
               // ...competency,
@@ -91,6 +120,9 @@ export default function PersonPage() {
               'Framework Name': competency.competencyframeworktitle,
               'Framework Version': 'v1.0.3',
             }))}
+=======
+            objArr={userData?.learner?.competencies}
+>>>>>>> main
             title={'Competencies'}
             subtitle={'Competency'}
           />
