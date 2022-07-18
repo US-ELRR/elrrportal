@@ -6,6 +6,10 @@ export default function handler(req, res, next) {
   const {
     data: { learners },
   } = personnelData;
+<<<<<<< HEAD
+
+=======
+>>>>>>> main
   // console.log(learners);
 
   // iterate over the array of learners

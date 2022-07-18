@@ -37,3 +37,10 @@ yarn-error.log*
 .vscode/settings.json
 .vscode/launch.json
 .env
+.idea/.gitignore
+.idea/elrrportal.iml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/codeStyles/codeStyleConfig.xml
+.idea/codeStyles/Project.xml
+.idea/inspectionProfiles/Project_Default.xml

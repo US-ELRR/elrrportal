@@ -1,6 +1,10 @@
 // tailwind.config.js
 module.exports = {
+<<<<<<< HEAD
+  jit: false,
+=======
   jit: true,
+>>>>>>> main
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',

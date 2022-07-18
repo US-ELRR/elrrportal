@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import DODlogo from 'src\\public\\DOD.png';
+import DODlogo from 'src/public/DOD.png';
 
 export function DODImage() {
   return (

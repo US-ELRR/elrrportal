@@ -16,7 +16,11 @@ export default function DetailsCard({ obj, title, cols }) {
   };
 
   return (
+<<<<<<< HEAD
+    <div className='rounded shadow p-4 bg-gray-50 my-4 gap-4 print:shadow-none'>
+=======
     <div className='rounded shadow p-4 bg-gray-50 my-4 gap-4'>
+>>>>>>> main
       <h1 className='text-xl pb-4 border-b font-bold'>{title}</h1>
       <div
         className={`grid ${
