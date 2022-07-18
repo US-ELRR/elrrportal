@@ -1,12 +1,13 @@
 export default function Footer() {
   return (
-    <footer className='max-w-7xl border-t mx-auto px-4 py-2 mt-8 flex justify-between items-end text-sm print:hidden'>
+    <footer className='max-w-7xl border-t mx-auto px-4 py-2 mt-8 flex justify-around items-end text-sm'>
       <div id='copy-right' className='text-sm'>
         <p>
-          <span>Copyright &copy; - 2022</span>
-        </p>
-        <p>
-          Disclaimer: The data on this website is for informational purposes
+          <span>&copy;</span>
+          <span>2022</span>
+          <span>&nbsp;</span>
+          <span> - </span>
+          <span>Copyright &copy; 2022</span>
         </p>
       </div>
       <div className='grid grid-cols-4 gap-8'>
@@ -16,33 +17,61 @@ export default function Footer() {
           </h3>
           <ul className='text-gray-500'>
             <li>
-              <a href='#'>DOD Home Page</a>
+              <a href='#'>link one</a>
             </li>
             <li>
-              <a href='#'>About ADL</a>
-            </li>
-          </ul>
-        </div>
-        <div className='col-span-1'>
-          <h3 className='font-semibold py-2 underline underline-offset-1 text-gray-600'>
-            Policy
-          </h3>
-          <ul className='text-gray-500'>
-            <li>
-              <a href='#'>Web Policy</a>
+              <a href='#'>link two</a>
             </li>
             <li>
-              <a href='#'>Privacy</a>
+              <a href='#'>link three</a>
             </li>
           </ul>
         </div>
         <div className='col-span-1'>
           <h3 className='font-semibold py-2 underline underline-offset-1 text-gray-600'>
-            Contact
+            Resources
           </h3>
           <ul className='text-gray-500'>
             <li>
-              <a href='#'>Contact Us</a>
+              <a href='#'>link one</a>
+            </li>
+            <li>
+              <a href='#'>link two</a>
+            </li>
+            <li>
+              <a href='#'>link three</a>
+            </li>
+          </ul>
+        </div>
+        <div className='col-span-1'>
+          <h3 className='font-semibold py-2 underline underline-offset-1 text-gray-600'>
+            Contacts
+          </h3>
+          <ul className='text-gray-500'>
+            <li>
+              <a href='#'>link one</a>
+            </li>
+            <li>
+              <a href='#'>link two</a>
+            </li>
+            <li>
+              <a href='#'>link three</a>
+            </li>
+          </ul>
+        </div>
+        <div className='col-span-1'>
+          <h3 className='font-semibold py-2 underline underline-offset-1 text-gray-600'>
+            Web Policy
+          </h3>
+          <ul className='text-gray-500'>
+            <li>
+              <a href='#'>link one</a>
+            </li>
+            <li>
+              <a href='#'>link two</a>
+            </li>
+            <li>
+              <a href='#'>link three</a>
             </li>
           </ul>
         </div>

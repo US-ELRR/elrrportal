@@ -35,11 +35,7 @@ export default function Table({
                   </tr>
                 </thead>
                 <tbody className='bg-white text-left '>
-<<<<<<< HEAD
-                  {data?.length > 0 &&
-=======
                   {data.length > 0 &&
->>>>>>> main
                     data.map((item) => {
                       return (
                         <tr
