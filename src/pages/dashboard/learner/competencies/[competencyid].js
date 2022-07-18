@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-import { useEffect, useState } from 'react';
-import DefaultLayout from '@/components/layouts/DefaultLayout';
-import DetailsCard from '@/components/common/DetailsCard';
-import axios from 'axios';
-import useAuthRouter from '@/hooks/useAuthRouter';
-=======
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import useAuthRouter from '@/hooks/useAuthRouter';
 import DetailsCard from '@/components/common/DetailsCard';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
->>>>>>> main
 
 export default function CompetencyPage() {
   const [competency, setCompetency] = useState({});

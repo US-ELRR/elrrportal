@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-import { useEffect, useState } from 'react';
-import DefaultLayout from '@/components/layouts/DefaultLayout';
-import DetailsCard from '@/components/common/DetailsCard';
-import axios from 'axios';
-import useAuthRouter from '@/hooks/useAuthRouter';
-=======
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import useAuthRouter from '@/hooks/useAuthRouter';
 import axios from 'axios';
 import DetailsCard from '@/components/common/DetailsCard';
 import { useEffect, useState } from 'react';
->>>>>>> main
 
 export default function CoursePage() {
   const router = useAuthRouter();

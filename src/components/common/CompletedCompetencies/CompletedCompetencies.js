@@ -4,11 +4,7 @@ export default function CompletedCompetencies({ completedCompetencies = [] }) {
   const router = useAuthRouter();
 
   const handleNavigate = (competencyid) => {
-<<<<<<< HEAD
-    router.push(`/dashboard/careerManager/competencies/${competencyid}`);
-=======
     router.push(`/dashboard/career_manager/competencies/${competencyid}`);
->>>>>>> main
   };
 
   return (

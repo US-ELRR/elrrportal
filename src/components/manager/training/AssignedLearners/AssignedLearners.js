@@ -3,11 +3,7 @@ import useAuthRouter from '@/hooks/useAuthRouter';
 export default function AssignedLearners({ learners }) {
   const router = useAuthRouter();
   const handleNavigate = (id) => {
-<<<<<<< HEAD
-    router.push(`/dashboard/trainingManager/learners/${id}`);
-=======
     router.push(`/dashboard/training_manager/learners/${id}`);
->>>>>>> main
   };
   return (
     <div className='bg-white rounded shadow p-4 flex-1'>

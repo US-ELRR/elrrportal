@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-import DefaultLayout from '@/components/layouts/DefaultLayout';
-import Table from '@/components/common/Table';
-=======
 import Table from '@/components/common/Table';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
->>>>>>> main
 import useAuthRouter from '@/hooks/useAuthRouter';
 import useStore from '@/store/store';
 

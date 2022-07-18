@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-import { useRouter } from 'next/router';
-
-export default function EnrolledCourses({ courses = [], handleNavigate }) {
-=======
 import { useRouter } from "next/router";
 
 export default function EnrolledCourses({ courses }) {
@@ -12,7 +7,6 @@ export default function EnrolledCourses({ courses }) {
     router.push(`/dashboard/career_manager/courses/${course.courseid}`);
   };
 
->>>>>>> main
   return (
     <div className='bg-white rounded shadow p-4 flex-1'>
       <h1 className='text-lg text-center font-semibold pb-2 border-b'>

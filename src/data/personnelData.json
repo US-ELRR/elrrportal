@@ -184,11 +184,7 @@
               "recordstatus": "ACTIVE"
             },
             {
-<<<<<<< HEAD
-              "employmentid": 111,
-=======
               "employmentid": 100,
->>>>>>> main
               "employerName": "NAVY",
               "employerdepartment": "",
               "hiredate": "06/30/2012",
@@ -202,11 +198,7 @@
               "recordstatus": "ACTIVE"
             },
             {
-<<<<<<< HEAD
-              "employmentid": 121,
-=======
               "employmentid": 100,
->>>>>>> main
               "employerName": "NAVY",
               "employerdepartment": "",
               "hiredate": "06/30/2012",

@@ -254,19 +254,25 @@
         },
         "employment": [
           {
-<<<<<<< HEAD
-            "employmentid": 101,
-            "employerName": "NAVY",
-            "employerdepartment": "",
-            "hiredate": "06/30/2012",
-            "employmentstartdate": "2019-07-07",
-=======
             "employmentid": 100,
             "employerName": "NAVY",
             "employerdepartment": "",
             "hiredate": "06/30/2012",
             "employmentstartdate": "2012-07-07",
->>>>>>> main
+            "employmentenddate": null,
+            "joblevel": "Petty Officer Third Class",
+            "occupation": "Mass Communications Specialist",
+            "employed": "Y",
+            "primarycareercategory": null,
+            "secondcarrercategory": null,
+            "recordstatus": "ACTIVE"
+          },
+          {
+            "employmentid": 100,
+            "employerName": "NAVY",
+            "employerdepartment": "",
+            "hiredate": "06/30/2012",
+            "employmentstartdate": "2012-07-07",
             "employmentenddate": null,
             "joblevel": "Petty Officer Third Class",
             "occupation": "Mass Communications Specialist",
@@ -290,41 +296,11 @@
             "recordstatus": "ACTIVE"
           },
           {
-<<<<<<< HEAD
-            "employmentid": 102,
-            "employerName": "NAVY",
-            "employerdepartment": "",
-            "hiredate": "06/30/2012",
-            "employmentstartdate": "2013-07-07",
-=======
             "employmentid": 100,
             "employerName": "NAVY",
             "employerdepartment": "",
             "hiredate": "06/30/2012",
             "employmentstartdate": "2012-07-07",
->>>>>>> main
-            "employmentenddate": null,
-            "joblevel": "Petty Officer Third Class",
-            "occupation": "Mass Communications Specialist",
-            "employed": "Y",
-            "primarycareercategory": null,
-            "secondcarrercategory": null,
-            "recordstatus": "ACTIVE"
-          },
-          {
-<<<<<<< HEAD
-            "employmentid": 103,
-            "employerName": "NAVY",
-            "employerdepartment": "",
-            "hiredate": "06/30/2012",
-            "employmentstartdate": "2015-07-07",
-=======
-            "employmentid": 100,
-            "employerName": "NAVY",
-            "employerdepartment": "",
-            "hiredate": "06/30/2012",
-            "employmentstartdate": "2012-07-07",
->>>>>>> main
             "employmentenddate": null,
             "joblevel": "Petty Officer Third Class",
             "occupation": "Mass Communications Specialist",
@@ -344,10 +320,6 @@
           "courseidentifier": "ACQ 101",
           "courselevel": null,
           "coursenumber": "101",
-<<<<<<< HEAD
-          "coursecompletiondate": null,
-=======
->>>>>>> main
           "courseinstructionmethod": "Web",
           "coursestartdate": "12/21/2020",
           "courseenddate": "01/15/2021",
@@ -369,10 +341,6 @@
           "courseidentifier": "CLC 067",
           "courselevel": null,
           "coursenumber": "67",
-<<<<<<< HEAD
-          "coursecompletiondate": "1-25-2021",
-=======
->>>>>>> main
           "courseinstructionmethod": "Web",
           "coursestartdate": "01/15/2021",
           "courseenddate": "01/25/2021",
@@ -394,10 +362,6 @@
           "courseidentifier": "CON 100",
           "courselevel": null,
           "coursenumber": "100",
-<<<<<<< HEAD
-          "coursecompletiondate": "1-15-2021",
-=======
->>>>>>> main
           "courseinstructionmethod": "Web",
           "coursestartdate": "01/15/2021",
           "courseenddate": "01/25/2021",
@@ -419,10 +383,6 @@
           "courseidentifier": "DOD-US1364-21",
           "courselevel": null,
           "coursenumber": "21",
-<<<<<<< HEAD
-          "coursecompletiondate": "12-21-2020",
-=======
->>>>>>> main
           "courseinstructionmethod": "Web",
           "coursestartdate": "03/03/2021",
           "courseenddate": "03/20/2021",
@@ -462,32 +422,6 @@
           "recordstatus": "ACTIVE"
         },
         {
-<<<<<<< HEAD
-          "competencyid": 111,
-          "competencyframeworktitle": "Personnel Management and Mentoring",
-          "competencyframeworkversion": null,
-          "competencyframeworkidentifier": null,
-          "competencyframeworkdescription": null,
-          "competencyframeworksubject": null,
-          "competencyframeworkvalidstartdate": null,
-          "competencyframeworkvalidenddate": null,
-          "competencydefinitionidentifier": null,
-          "competencydefinitionidentifierurl": null,
-          "competencytaxonomyid": null,
-          "competencydefinitionvalidstartdate": null,
-          "competencydefinitionvalideenddate": null,
-          "competencydefinitionparentidentifier": null,
-          "competencydefinitionparenturl": null,
-          "competencydescriptionparentcode": null,
-          "competencydefinitioncode": null,
-          "competencydefinitionstatement": null,
-          "competencydefinitiontypeurl": null,
-          "competencydefinitiontype": null,
-          "recordstatus": "ACTIVE"
-        },
-        {
-=======
->>>>>>> main
           "competencyid": 101,
           "competencyframeworktitle": "Contract Principles: General Contracting Concepts",
           "competencyframeworkversion": null,
@@ -574,19 +508,11 @@
             "recordstatus": "ACTIVE"
           },
           {
-<<<<<<< HEAD
-            "employmentid": 111,
-            "employerName": "NAVY",
-            "employerdepartment": "",
-            "hiredate": "06/30/2012",
-            "employmentstartdate": "2018-07-07",
-=======
             "employmentid": 100,
             "employerName": "NAVY",
             "employerdepartment": "",
             "hiredate": "06/30/2012",
             "employmentstartdate": "2012-07-07",
->>>>>>> main
             "employmentenddate": null,
             "joblevel": "Petty Officer Third Class",
             "occupation": "Mass Communications Specialist",
@@ -596,11 +522,7 @@
             "recordstatus": "ACTIVE"
           },
           {
-<<<<<<< HEAD
-            "employmentid": 121,
-=======
             "employmentid": 100,
->>>>>>> main
             "employerName": "NAVY",
             "employerdepartment": "",
             "hiredate": "06/30/2012",
