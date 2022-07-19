@@ -75,7 +75,10 @@ export default function Navbar({ userData, logout }) {
       <div className='' onClick={logout}>
         {userData?.role && <div>{userData?.role}</div>}
         {userData?.learner?.personnel?.person?.name && (
-          <div>{userData?.learner.personnel.person?.name}</div>
+          <>
+            <div>{userData?.learner.personnel.person?.name}</div>
+            <div>no logout button?</div>
+          </>
         )}
       </div>
     </header>
