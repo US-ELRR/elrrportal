@@ -1,26 +1,26 @@
 // intial login page for the app
 // all users must come here first before they can access the app
 
-import { useEffect, useState } from 'react';
 import DODImage from '@/public/DOD.png';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import useStore from '@/store/store';
 import axios from 'axios';
 import useAuthRouter from '@/hooks/useAuthRouter';
-import useStore from '@/store/store';
 
 export default function LoginPage() {
   const router = useAuthRouter();
   const { userData, setUserData } = useStore((state) => state);
   const [credentials, setCredentials] = useState({
     username: '',
-    password: ''
+    password: '',
   });
 
   const handleUpdate = (e) => {
     setCredentials((previous) => ({
       ...previous,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -50,8 +50,7 @@ export default function LoginPage() {
           Welcome to the Enterprise Learner Record Repository
         </h1>
       </div>
-      <form
-        className='flex justify-center flex-col items-center mt-10 gap-4 my-10'>
+      <form className='flex justify-center flex-col items-center mt-10 gap-4 my-10'>
         <div className='grid gap-2'>
           <input
             onChange={handleUpdate}

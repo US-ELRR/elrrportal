@@ -63,28 +63,6 @@
     "recordstatus": "ACTIVE"
   },
   {
-    "courseid": 104,
-    "name": "Shaping Smart Business Arrangements",
-    "coursesubjectmatter": null,
-    "coursesubjectabbreviation": null,
-    "courseidentifier": "CON 100",
-    "courselevel": null,
-    "coursenumber": "100",
-    "coursecompletiondate": "1-15-2021",
-    "courseinstructionmethod": "Web",
-    "coursestartdate": "01/15/2021",
-    "courseenddate": "01/25/2021",
-    "courseenrollmentdate": "01/03/2021",
-    "courseacademicgrade": null,
-    "courseprovidername": "DAU",
-    "departmentname": "Defense Acquisition University",
-    "coursegradescalecode": null,
-    "coursemetadatarepository": null,
-    "courselrsendpoint": null,
-    "coursedescription": null,
-    "recordstatus": "ACTIVE"
-  },
-  {
     "courseid": 109,
     "name": "Department of Defense (DoD) Cyber Awareness Challenge 2021 (1 hr) ",
     "coursesubjectmatter": null,

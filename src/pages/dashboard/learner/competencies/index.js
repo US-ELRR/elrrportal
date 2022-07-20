@@ -1,5 +1,5 @@
-import DefaultLayout from '@/components/layouts/DefaultLayout';
 import Table from '@/components/common/Table';
+import DefaultLayout from '@/components/layouts/DefaultLayout';
 import useAuthRouter from '@/hooks/useAuthRouter';
 import useStore from '@/store/store';
 

@@ -2,6 +2,7 @@ import careerManagerData from '@/data/career_manager/careerManagerData.json';
 import learnerData from '@/data/learner/learnerData.json';
 import systemAdminData from '@/data/systemAdmin/systemAdminData.json';
 import trainingManagerData from '@/data/training_manager/trainingManagerData.json';
+import learnerData from '@/data/learner/learnerData.json';
 
 export default function handler(req, res) {
   const { username } = req.body;

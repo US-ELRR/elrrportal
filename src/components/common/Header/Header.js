@@ -1,7 +1,10 @@
+import Banner from './Banner';
+import LoggedOutNavBar from '@/components/common/Header/LoggedOutNavBar';
+import NavBar from '@/components/common/Header/NavBar';
 import { useRouter } from 'next/router';
-import Banner from '@/components/common/Header/Banner';
-import NavBar from '@/components/common/Header/Navbar';
 import useStore from '@/store/store';
+
+
 
 export default function Header() {
   const { userData, removeUserData } = useStore((state) => state);
@@ -13,7 +16,7 @@ export default function Header() {
   };
 
   return (
-    <header className='bg-gradient-to-t from-dod-900 via-dod-500 to-dod-300 print:hidden'>
+    <header className='bg-gradient-to-t from-dod-900 via-dod-500 to-dod-300'>
       <nav className='max-w-7xl mx-auto'>
         <Banner />
         <NavBar userData={userData} logout={handleLogout} />

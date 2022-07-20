@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import NavBtn from './NavBtn';
+import Link from 'next/link';
 
 const nav_options_career_manager = [
   {
@@ -8,26 +8,21 @@ const nav_options_career_manager = [
   },
   {
     name: 'Personnel',
-    path: '/dashboard/careerManager/personnel', // will need to be reactive based on the user type
+    path: '/dashboard/career_manager/personnel', // will need to be reactive based on the user type
   },
   {
     name: 'Competencies',
-    path: '/dashboard/careerManager/competencies',
+    path: '/dashboard/career_manager/competencies',
   },
-
-  // {
-  //   name: 'Search',
-  //   path: '/dashboard/careerManager/search', // will need to be reactive based on the user type
-  // },
+  {
+    name: 'Search',
+    path: '/dashboard/career_manager/search', // will need to be reactive based on the user type
+  },
 ];
 const nav_options_learner = [
   {
     name: 'Dashboard',
     path: '/dashboard', // will need to be reactive based on the user type
-  },
-  {
-    name: 'Transcript',
-    path: '/dashboard/learner/profile', // will need to be reactive based on the user type
   },
 ];
 
@@ -38,15 +33,15 @@ const training_manager_nav_options = [
   },
   {
     name: 'Courses',
-    path: '/dashboard/trainingManager/courses',
+    path: '/dashboard/training_manager/courses',
   },
   {
     name: 'Competencies',
-    path: '/dashboard/trainingManager/competencies',
+    path: '/dashboard/training_manager/competencies',
   },
   {
     name: 'Learners',
-    path: '/dashboard/trainingManager/learners',
+    path: '/dashboard/training_manager/learners',
   },
 ];
 
@@ -77,18 +72,10 @@ export default function Navbar({ userData, logout }) {
             return <NavBtn key={option.name} btn={option} />;
           })}
       </div>
-      <div className='text-right'>
+      <div className='' onClick={logout}>
         {userData?.role && <div>{userData?.role}</div>}
         {userData?.learner?.personnel?.person?.name && (
           <div>{userData?.learner.personnel.person?.name}</div>
-        )}
-        {userData && (
-          <button
-            className='inline-flex items-center px-4 py-0.5 text-sm font-bold leading-5 text-white transition duration-75 ease-in-out bg-dod-500 border border-transparent rounded-md hover:bg-dod-700 focus:outline-none focus:ring-dod-500 focus:ring-2 ring-offset-1 focus:border-dod-500'
-            onClick={logout}
-          >
-            Logout
-          </button>
         )}
       </div>
     </header>
